@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<widget
+    id="pvr.cricularprogressbar.CricularProgressBar"
+    pluginWidget="true"
+    needsEntityContext="true"
+    offlineCapable="true"
+    supportedPlatform="Native"
+    xmlns="http://www.mendix.com/widget/1.0/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd"
+>
+    <name>Cricular Progress Bar</name>
+    <description>A customizable progress bar widget</description>
+    <icon>
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAADSklEQVR4nO1ZS2sUQRAuFB9gfIEKXgz6GzSKqL9B/Q9Ro/coBI2SnPPw5klQQkxXb+JpQSRMVVbBg5fExGOIHjQazUGFGA8bqZ4gM92z7s5O74yR/aBhmJmq7uqurvq6GqCNNtrIjv6NbaC4CzTfAiQNmudA0ypoWt9sq+YdEpp/5F+RKRwlPgrIg4D0HjRvpGv0zsiKjtwxVjkImkdB81r6gTttzeiaCg7kM3iky4D0ycPA4w152ehuGZTavjnrNQZA30DTOGDQDSU6BWrmMDx4vcM0eTZ7hK4A0hPQ/P0vhoyYvrziYbAbkCdrdPoRFF2HR8/2NKxP/kW+YWY92YhJ06cXyGwgTSV08hM09YMKOprXHXQA8r0wUiUY4WUlktzG+CufBV9QwbnEfYU0nE2xbCo3/M2DqhwD39DTnaBpwTKgCiW61JxC9Xw/IH2wDFgBXTkBrYKe7nRWQlZbwnZqIN13fN6n29Tu93zCnhhNp0Syo5OkqB/ygqY+J9mlytiS4p1QmSHapEW5vAs0LVoeMNiYsJAs4SlRYYnzeUPxVcuApcYIYMgq4xk2TZLyBRV0OBkbg5P1BYXuxn1/PI/xJkLzhDWZN6EuQj4ftbobioKy3YiwvhDym7j/cxcUhVJwxgomc/WFkL/EhMaCQ1AUSi+POIm0LuwkouZ3QlEoSzi1kun/bwBudRfCLb+JKR5G5RhYFJCvpQ+jdiKTM2xRQFNHik5mb3oqIem8OCrxIz2VSCJzcgDPGzroaY7MJdFpORU9fbEX8gyfyEuWKw9kO9Ag34W8oOlOtgNNYjWC1k31oNXQfAE0/bImbyS9osev9jmHepPkCjjUTzVbNw3roFVrJRZMR76h+Dggv7X8vgp65mI2xbJ8cX8UIz6b6oFXt+GVhH6GPJUWk+qi5uKiLxPZK5toczuxtKi55K/IG3ZUo7hLi+bklKZqYZJU0OOEyujgpU+vCIu8w+6e+NMka04Y/oIzpw2TlNWRJs/yLuQ2ysmwOurzNOS/vB6F1CprlcWzNOTl5uugaSFhzecVE/JIfldMziUfDTjcqbEZXzKyhVzy2RCSJddKUrcxFJhmQdPXyDWrPM9ufus1rPKfuGZtow3Y8vgN00sNqZVHxJMAAAAASUVORK5CYII=
+    </icon>
+    <properties>
+        <propertyGroup caption="General Settings">
+            <propertyGroup caption="Data Source">
+                <property key="Count" type="attribute" required="true">
+                    <caption>Count Attribute</caption>
+                    <description>The attribute value should be below 100.</description>
+                    <attributeTypes>
+                        <attributeType name="Integer" />
+                    </attributeTypes>
+                </property>
+            </propertyGroup>
+
+            <propertyGroup caption="Title">
+                <property key="showTitle" type="enumeration" defaultValue="no">
+                    <caption>Display Title</caption>
+                    <description>Choose whether to show the title</description>
+                    <enumerationValues>
+                        <enumerationValue key="yes">Yes</enumerationValue>
+                        <enumerationValue key="no">No</enumerationValue>
+                    </enumerationValues>
+                </property>
+                <property key="title" type="string" required="true">
+                    <caption>Title</caption>
+                    <description>The title displayed above the progress bar</description>
+                </property>
+            </propertyGroup>
+
+            <propertyGroup caption="Logo">
+                <property key="showLogo" type="enumeration" defaultValue="no">
+                    <caption>Display Logo</caption>
+                    <description>Choose whether to show a logo</description>
+                    <enumerationValues>
+                        <enumerationValue key="yes">Yes</enumerationValue>
+                        <enumerationValue key="no">No</enumerationValue>
+                    </enumerationValues>
+                </property>
+                <property key="logo" type="image" required="true">
+                    <caption>Logo Image</caption>
+                    <description>Select an image to display as the logo</description>
+                </property>
+                <property key="logoheight" type="integer" defaultValue="24">
+                    <caption>Logo Height</caption>
+                    <description>The height of the logo in pixels</description>
+                </property>
+                <property key="logowidth" type="integer" defaultValue="24">
+                    <caption>Logo Width</caption>
+                    <description>The width of the logo in pixels</description>
+                </property>
+            </propertyGroup>
+        </propertyGroup>
+
+        <propertyGroup caption="Display Settings">
+            <propertyGroup caption="Visual Appearance">
+                <property key="WidgetSize" type="integer" defaultValue="100" required="true">
+                    <caption>Widget Size</caption>
+                    <description>The diameter of the progress bar in pixels</description>
+                </property>
+                <property key="fontSize" type="integer" defaultValue="16" required="true">
+                    <caption>Font Size</caption>
+                    <description>The size of the font for the count value</description>
+                </property>
+                <property key="FontColor" type="string" defaultValue="#000000" required="true">
+                    <caption>Font Color</caption>
+                    <description>The color of the font for the count value</description>
+                </property>
+                <property key="BorderWidth" type="integer" defaultValue="14" required="true">
+                    <caption>Border Width</caption>
+                    <description>The thickness of the progress bar border in pixels</description>
+                </property>
+                <property key="tintColor" type="string" required="true" defaultValue="#35AB54">
+                    <caption>Tint Color (85-100%)</caption>
+                    <description>The color of the progress bar when the count is between 85% and 100%</description>
+                </property>
+                <property key="tintColor2" type="string" required="true" defaultValue="#FFBF00">
+                    <caption>Tint Color (60-84%)</caption>
+                    <description>The color of the progress bar when the count is between 60% and 84%</description>
+                </property>
+                <property key="tintColor3" type="string" required="true" defaultValue="#EA4234">
+                    <caption>Tint Color (0-59%)</caption>
+                    <description>The color of the progress bar when the count is between 0% and 59%</description>
+                </property>
+                <property key="bgColor" type="string" required="true" defaultValue="#ECECEC">
+                    <caption>Background Color</caption>
+                    <description>The background color of the progress bar</description>
+                </property>
+            </propertyGroup>
+            <propertyGroup caption="Animation">
+                <property key="AnimatedDuration" type="integer" defaultValue="1500" required="true">
+                    <caption>Animation Duration</caption>
+                    <description>The duration of the progress bar animation in milliseconds</description>
+                </property>
+                <property key="AnimatedDelay" type="integer" defaultValue="500" required="true">
+                    <caption>Animation Delay</caption>
+                    <description>The delay before the progress bar animation starts, in milliseconds</description>
+                </property>
+            </propertyGroup>
+        </propertyGroup>
+    </properties>
+</widget>
